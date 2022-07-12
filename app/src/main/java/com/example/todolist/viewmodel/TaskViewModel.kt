@@ -47,4 +47,5 @@ class TaskViewModel(application: Application): AndroidViewModel(application) {
             repository.deleteAll()
         }
     }
+
 }

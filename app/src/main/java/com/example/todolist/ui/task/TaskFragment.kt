@@ -12,6 +12,7 @@ import com.example.todolist.R
 import com.example.todolist.databinding.FragmentTaskBinding
 import com.example.todolist.viewmodel.TaskViewModel
 import com.google.android.material.snackbar.Snackbar
+import androidx.lifecycle.Observer
 
 class TaskFragment : Fragment() {
 
@@ -77,9 +78,9 @@ class TaskFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-//            R.id.action_priority -> viewModel.getAllPriorityTasks.observe(viewLifecycleOwner, Observer { tasks ->
-//                adapter.submitList(tasks)
-//            })
+            R.id.action_priority -> viewModel.getAllPriorityTasks.observe(viewLifecycleOwner, Observer { tasks ->
+                adapter.submitList(tasks)
+            })
             R.id.action_delete_all -> deleteAllItems()
         }
         return super.onOptionsItemSelected(item)
