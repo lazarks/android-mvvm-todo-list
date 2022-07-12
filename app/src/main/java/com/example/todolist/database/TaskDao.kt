@@ -6,7 +6,7 @@ import androidx.room.*
 @Dao
 interface TaskDao {
     @Insert
-    suspend fun insert(taskEntry: TaskEntry)
+    fun insert(taskEntry: TaskEntry)
 
     @Delete
     fun delete(taskEntry: TaskEntry)
