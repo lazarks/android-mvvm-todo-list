@@ -53,4 +53,7 @@ dependencies {
     implementation "androidx.room:room-ktx:2.4.2"
     kapt "androidx.room:room-compiler:2.4.2"
     androidTestImplementation "androidx.room:room-testing:2.4.2"
+
+    // viewmodel lifecycle
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0"
 }
