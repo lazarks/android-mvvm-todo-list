@@ -48,4 +48,7 @@ class TaskViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
+    fun searchDatabase(searchQuery: String): LiveData<List<TaskEntry>> {
+        return repository.searchDatabase(searchQuery)
+    }
 }
