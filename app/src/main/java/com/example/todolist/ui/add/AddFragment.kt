@@ -22,10 +22,10 @@ class AddFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         val binding = FragmentAddBinding.inflate(inflater)
-        val myAdapter = ArrayAdapter<String>(
+        val myAdapter = ArrayAdapter(
             requireActivity(),
             android.R.layout.simple_spinner_dropdown_item,
             resources.getStringArray(R.array.priorities)
@@ -39,10 +39,10 @@ class AddFragment : Fragment() {
                     return@setOnClickListener
                 }
 
-                val title_str = edtTask.text.toString()
+                val titleStr = edtTask.text.toString()
                 val priority = spinner.selectedItemPosition
 
-                val taskEntry = TaskEntry(0, title_str, priority, System.currentTimeMillis())
+                val taskEntry = TaskEntry(0, titleStr, priority, System.currentTimeMillis())
 
                 viewModel.insert(taskEntry)
                 Toast.makeText(requireContext(), "Successfully added!", Toast.LENGTH_SHORT).show()
